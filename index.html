@@ -5,38 +5,235 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>公式LINE 友だち登録</title>
   <style>
-    body { font-family: 'Helvetica Neue', Arial, sans-serif; text-align: center; background-color: #f5f5f5; margin: 0; padding: 20px; color: #333; }
-    .container { max-width: 400px; margin: 0 auto; background: #fff; padding: 30px 20px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
-    .profile-img { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; margin-bottom: 10px; }
-    .btn { display: block; background-color: #06C755; color: #fff; text-decoration: none; padding: 15px; border-radius: 30px; font-weight: bold; font-size: 18px; margin: 20px 0; }
-    .btn:hover { background-color: #05b34c; }
-    .qr-code { width: 200px; height: 200px; margin: 15px 0; }
-    .id-box { background: #f0f0f0; padding: 10px; border-radius: 8px; font-size: 18px; font-weight: bold; letter-spacing: 1px; }
-    h2 { font-size: 20px; margin-bottom: 5px; }
-    p { font-size: 14px; color: #666; margin-bottom: 25px; line-height: 1.6; }
-    hr { border: none; border-top: 1px solid #eee; margin: 30px 0; }
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: linear-gradient(to bottom, #f7f7f7, #ececec);
+      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+      color: #222;
+    }
+
+    .wrap {
+      max-width: 430px;
+      margin: 0 auto;
+      padding: 24px 16px 40px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 22px;
+      padding: 28px 20px 34px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      text-align: center;
+    }
+
+    .profile-img {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      object-fit: cover;
+      display: block;
+      margin: 0 auto 16px;
+      border: 4px solid #fff;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+    }
+
+    .tag {
+      display: inline-block;
+      background: #eef9f1;
+      color: #06C755;
+      font-size: 13px;
+      font-weight: bold;
+      padding: 6px 12px;
+      border-radius: 999px;
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      font-size: 26px;
+      line-height: 1.4;
+      margin: 0 0 10px;
+      color: #111;
+    }
+
+    .lead {
+      font-size: 15px;
+      line-height: 1.8;
+      color: #555;
+      margin: 0 0 22px;
+    }
+
+    .main-btn {
+      display: block;
+      width: 100%;
+      background: linear-gradient(135deg, #06C755, #00b94d);
+      color: #fff;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: bold;
+      padding: 16px;
+      border-radius: 999px;
+      margin-bottom: 22px;
+      box-shadow: 0 8px 18px rgba(6, 199, 85, 0.25);
+    }
+
+    .box {
+      background: #fafafa;
+      border-radius: 16px;
+      padding: 18px 16px;
+      margin-top: 18px;
+    }
+
+    .box-title {
+      font-size: 20px;
+      font-weight: bold;
+      margin: 0 0 12px;
+      color: #111;
+    }
+
+    .small-text {
+      font-size: 13px;
+      color: #777;
+      line-height: 1.7;
+      margin-bottom: 10px;
+    }
+
+    .id-box {
+      background: #f0f0f0;
+      border-radius: 12px;
+      padding: 14px;
+      font-size: 24px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      margin-bottom: 12px;
+    }
+
+    .sub-btn {
+      display: inline-block;
+      border: none;
+      background: #222;
+      color: #fff;
+      border-radius: 999px;
+      padding: 11px 18px;
+      font-size: 14px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .qr-code {
+      width: 210px;
+      max-width: 100%;
+      display: block;
+      margin: 10px auto 12px;
+      border-radius: 12px;
+      background: #fff;
+    }
+
+    .save-btn {
+      display: inline-block;
+      margin-top: 8px;
+      background: #06C755;
+      color: #fff;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: bold;
+      padding: 12px 18px;
+      border-radius: 999px;
+    }
+
+    .steps {
+      text-align: left;
+      margin-top: 14px;
+      font-size: 14px;
+      line-height: 1.8;
+      color: #444;
+    }
+
+    .step {
+      margin-bottom: 6px;
+    }
+
+    .divider {
+      height: 1px;
+      background: #ececec;
+      margin: 24px 0;
+      border: none;
+    }
+
+    .footer {
+      margin-top: 22px;
+      font-size: 12px;
+      line-height: 1.7;
+      color: #888;
+    }
   </style>
 </head>
 <body>
-  <div class="container">
-    <img src="S__2998301.jpg" alt="プロフィール写真" class="profile-img">
-    
-    <h2>公式LINEに登録する</h2>
-    <p>こんにちは！皆さんとお話しするのを楽しみにしています😊</p>
-    
-    <a href="https://lin.ee/y81MnEf" class="btn">友だち追加する →</a>
-    
-    <hr>
-    
-    <h3>📱 LINE ID で検索</h3>
-    <p>LINEアプリの検索から追加できます</p>
-    <div class="id-box">@372kwwhn</div>
-    
-    <hr>
-    
-    <h3>📷 QRコードを読み取る</h3>
-    <p>LINEアプリの友だち追加画面から<br>QRコードをスキャンしてください</p>
-    <img src="S__3670035.jpg" alt="LINE QRコード" class="qr-code">
+  <div class="wrap">
+    <div class="card">
+      <img src="S__2998301.jpg" alt="プロフィール写真" class="profile-img">
+
+      <div class="tag">公式LINE受付中</div>
+
+      <h1>追加はこちらから</h1>
+
+      <p class="lead">
+        こんにちは！<br>
+        追加後にメッセージを送っていただければ、<br>
+        順番にご案内します😊
+      </p>
+
+      <a href="https://lin.ee/y81MnEf" class="main-btn">友だち追加する</a>
+
+      <hr class="divider">
+
+      <div class="box">
+        <div class="box-title">LINE IDで追加</div>
+        <div class="small-text">LINEアプリ内の検索からも追加できます</div>
+        <div class="id-box">@372kwwhn</div>
+        <button class="sub-btn" onclick="copyLineId()">LINE IDをコピー</button>
+
+        <div class="steps">
+          <div class="step">1. LINEアプリを開く</div>
+          <div class="step">2. 「友だち追加」→「検索」を押す</div>
+          <div class="step">3. 「@372kwwhn」を入力する</div>
+          <div class="step">4. 表示されたアカウントを追加する</div>
+        </div>
+      </div>
+
+      <div class="box">
+        <div class="box-title">QRコードで追加</div>
+        <div class="small-text">そのまま読み取るか、保存して追加できます</div>
+        <img src="S__3670035.jpg" alt="LINE QRコード" class="qr-code">
+        <a href="S__3670035.jpg" download class="save-btn">QRコードを保存する</a>
+
+        <div class="steps">
+          <div class="step">1. LINEアプリを開く</div>
+          <div class="step">2. 「友だち追加」→「QRコード」を押す</div>
+          <div class="step">3. このQRコードを読み取る</div>
+          <div class="step">4. 読み取れない場合は保存した画像から追加する</div>
+        </div>
+      </div>
+
+      <div class="footer">
+        追加後にひとことメッセージを送っていただけると<br>
+        スムーズにご案内できます。
+      </div>
+    </div>
   </div>
+
+  <script>
+    function copyLineId() {
+      const text = "@372kwwhn";
+      navigator.clipboard.writeText(text).then(function() {
+        alert("LINE IDをコピーしました");
+      }).catch(function() {
+        alert("コピーできない場合は手動でコピーしてください");
+      });
+    }
+  </script>
 </body>
 </html>
